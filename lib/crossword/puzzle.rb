@@ -1,6 +1,6 @@
 module Crossword
   class Puzzle
-    attr_reader :grid, :word_list, :seed, :across_words_pool, :down_words_pool
+    attr_reader :grid, :word_list
 
     def initialize(width, height=width, word_list=Crossword::Loader.load_word_list_file)
       @grid      = Grid.new(width, height=width)
