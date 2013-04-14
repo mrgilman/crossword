@@ -5,7 +5,10 @@ module Crossword
     def initialize(x, y)
       @x      = x
       @y      = y
-      @letter = nil
+    end
+
+    def letter=(letter)
+      @letter = letter
     end
   end
 end
