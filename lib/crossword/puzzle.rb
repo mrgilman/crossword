@@ -24,9 +24,17 @@ module Crossword
         grid.cells.select{|c| c.y == column}.sort_by(&:x).map(&:letter).join
       end
       words.each do |word|
-        return false unless word_list.words.include? word
+        return false unless word_list.of_length(grid.height).words.include? word
       end
       true
+    end
+
+    def print
+      (0..(grid.height - 1)).to_a.each do |row|
+        letters = grid.cells.select{|c| c.x == row}.sort_by(&:y).map(&:letter)
+        letters.each{|letter| printf "#{letter} "}; printf "\n"
+      end
+      nil
     end
   end
 end
