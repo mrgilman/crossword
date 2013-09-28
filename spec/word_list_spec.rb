@@ -14,14 +14,14 @@ module Crossword
       let(:word_list) { WordList.new(%W{APPLE BANANA CHOCOLATE DAIRY EGG}) }
 
       it "contains words of specified length" do
-        word_list.of_length(5).words.include?("APPLE").should be_true
-        word_list.of_length(5).words.include?("DAIRY").should be_true
+        word_list.of_length(5).words.should include "APPLE"
+        word_list.of_length(5).words.should include "DAIRY"
       end
 
       it "does not contain words other than specified length" do
-        word_list.of_length(5).words.include?("BANANA").should be_false
-        word_list.of_length(5).words.include?("CHOCOLATE").should be_false
-        word_list.of_length(5).words.include?("EGG").should be_false
+        word_list.of_length(5).words.should_not include "BANANA"
+        word_list.of_length(5).words.should_not include "CHOCOLATE"
+        word_list.of_length(5).words.should_not include "EGG"
       end
     end
   end

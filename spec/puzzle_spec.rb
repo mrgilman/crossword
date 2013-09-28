@@ -37,17 +37,17 @@ module Crossword
 
         it "keeps attempting to build the puzzle until it creates a valid one" do
           puzzle.build!
-          puzzle.valid?.should be_true
+          puzzle.should be_valid
         end
       end
 
       describe "#valid?" do
         it "returns true if all of the down words are in the word list" do
-          valid_puzzle.valid?.should be_true
+          valid_puzzle.should be_valid
         end
 
         it "returns false if any of the down words are not in the word list" do
-          invalid_puzzle.valid?.should be_false
+          invalid_puzzle.should_not be_valid
         end
       end
     end
