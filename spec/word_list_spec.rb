@@ -24,5 +24,17 @@ module Crossword
         word_list.of_length(5).words.should_not include "EGG"
       end
     end
+
+    describe "#has_word?" do
+      let(:word_list) { WordList.new(%W{APPLE BANANA CHOCOLATE DAIRY EGG}) }
+
+      it "should be true if the word list contains the passed in word" do
+        word_list.should have_word "APPLE"
+      end
+
+      it "should be false if the word list does not contain the passed in word" do
+        word_list.should_not have_word "PIE"
+      end
+    end
   end
 end
