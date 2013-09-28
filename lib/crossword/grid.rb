@@ -16,6 +16,14 @@ module Crossword
       end
     end
 
+    def cells_in_row(row)
+      cells.select{|c| c.x == row}.sort_by(&:y)
+    end
+
+    def cells_in_column(column)
+      cells.select{|c| c.y == column}.sort_by(&:x)
+    end
+
     class GridError < StandardError; end
   end
 end
