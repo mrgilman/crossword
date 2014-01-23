@@ -5,7 +5,7 @@ module Crossword
     NYT = 'word_lists/nyt.txt'
     FLW = 'word_lists/four_letter_words.txt'
 
-    def self.load_word_list_file(file=FLW)
+    def self.load_word_list_file(file=NYT)
       words = File.open(file).read
       words.split("\n")
     end
